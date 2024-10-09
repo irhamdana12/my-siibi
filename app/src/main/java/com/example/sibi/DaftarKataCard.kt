@@ -59,7 +59,7 @@ fun DaftarKataCard(navController: NavHostController) {
                 Spacer(modifier = Modifier.height(8.dp))
                 Button(
                     onClick = { navController.navigate("daftarKata") },
-                    colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF00ADEF))
+                    colors = ButtonDefaults.buttonColors(containerColor = Color.Yellow)
                 ) {
                     Text("Kunjungi")
                 }
@@ -125,10 +125,14 @@ fun DaftarKataScreen() {
         Spacer(modifier = Modifier.height(16.dp))
 
         // Button to trigger the search
-        Button(onClick = { performSearch() }) {
-            Text("Cari Kata")
+        Button(
+            onClick = {performSearch() },
+            colors = ButtonDefaults.buttonColors(
+                containerColor = Color(red = 158, green = 0, blue = 140)
+            )
+        ) {
+            Text(text = "Click Me")
         }
-
         Spacer(modifier = Modifier.height(16.dp))
 
         // Display "Kata tidak tersedia" if applicable
