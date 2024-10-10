@@ -15,7 +15,7 @@
       </SelectionState>
       <SelectionState runConfigName="SIBIScaffoldPreview">
         <option name="selectionMode" value="DROPDOWN" />
-        <DropdownSelection timestamp="2024-10-08T08:58:48.697933600Z">
+        <DropdownSelection timestamp="2024-10-10T08:00:32.263586500Z">
           <Target type="DEFAULT_BOOT">
             <handle>
               <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\User PC\.android\avd\Pixel_6_API_30.avd" />
