@@ -59,7 +59,7 @@ fun DaftarKataCard(navController: NavHostController) {
                 Spacer(modifier = Modifier.height(8.dp))
                 Button(
                     onClick = { navController.navigate("daftarKata") },
-                    colors = ButtonDefaults.buttonColors(containerColor = Color.Yellow)
+                    colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF00ADEF))
                 ) {
                     Text("Kunjungi")
                 }
