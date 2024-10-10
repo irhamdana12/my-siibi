@@ -60,8 +60,6 @@ fun InformasiTentangCard(navController: NavHostController) {
 
 @Composable
 fun InformasiTentangSibiScreen() {
-
-
     Column(
         modifier = Modifier
             .verticalScroll(rememberScrollState())
