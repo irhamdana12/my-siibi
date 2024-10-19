@@ -66,7 +66,6 @@ dependencies {
     implementation("org.tensorflow:tensorflow-lite-support:$tflite_support_version")
     implementation("org.tensorflow:tensorflow-lite-metadata:$tflite_support_version")
     implementation("org.tensorflow:tensorflow-lite-task-vision:$tflite_support_version")
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -83,7 +82,6 @@ dependencies {
     implementation(libs.tensorflow.lite.support)
     implementation(libs.tensorflow.lite.metadata)
 
-
     // CameraX (Remove redundant entries)
     implementation("androidx.camera:camera-core:$camerax_version")
     implementation("androidx.camera:camera-camera2:$camerax_version")
@@ -92,8 +90,7 @@ dependencies {
 
    // Tensorflow Lite Task Vision and Support
     implementation("org.tensorflow:tensorflow-lite-task-vision:0.4.4")
-//    implementation("org.tensorflow:tensorflow-lite-gpu-delegate-plugin:0.4.4")
-//    implementation("org.tensorflow:tensorflow-lite-gpu:2.14.0")
+    implementation ("org.tensorflow:tensorflow-lite-gpu:2.3.0")
     implementation("org.tensorflow:tensorflow-lite-support-api:0.4.4") {
         exclude(group = "org.tensorflow", module = "tensorflow-lite-support")
     }

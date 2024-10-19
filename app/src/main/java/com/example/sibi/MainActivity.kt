@@ -9,6 +9,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -18,6 +19,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.sibi.ui.theme.SIBITheme
+import java.util.concurrent.Executors
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,7 +31,8 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    SIBIScaffold()
+                    val detectionHelper = ObjectDetectionHelper(LocalContext.current) // Initialize outside remember
+                    SIBIScaffold(detectionHelper)
                 }
             }
         }
@@ -36,7 +40,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun SIBIScaffold() {
+fun SIBIScaffold(objectDetectionHelper: ObjectDetectionHelper) {
     val navController = rememberNavController()
 
     NavHost(navController = navController, startDestination = "home") {
@@ -44,7 +48,7 @@ fun SIBIScaffold() {
             HomeScreen(navController)
         }
         composable("deteksiIsyarat") {
-            DeteksiIsyaratScreen()
+            ObjectDetectionScreen(objectDetectionHelper)
         }
         composable("informasiTentangSibi") {
             InformasiTentangSibiScreen()
@@ -99,6 +103,7 @@ fun HomeScreen(navController: NavHostController) {
 @Composable
 fun SIBIScaffoldPreview() {
     SIBITheme {
-        SIBIScaffold()
+        val detectionHelper = ObjectDetectionHelper(LocalContext.current) // Initialize outside remember
+        SIBIScaffold(detectionHelper)
     }
 }
