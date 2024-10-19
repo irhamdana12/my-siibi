@@ -1,7 +1,7 @@
 # Tugas Akhir
 # Aplikasi Deteksi Sistem Isyarat Bahasa Indonesia (SIBI) Berbasis Android menggunakan Metode Rapid Application Development 
 
-**Muhammad Irhcam Maulana** **2011501007**
+**Muhammad Ircham Maulana** **2011501007**
 
 Model : Deteksi Gestur SIBI Menggunakan Metode Deep Learning SSD MobileNet V2 FPNLite
 **Nurul Tazkiyah Adam** **2011501030**
