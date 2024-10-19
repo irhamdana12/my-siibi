@@ -1,5 +1,5 @@
-# Aplikasi Deteksi Sistem Isyarat Bahasa Indonesia (SIBI) 
-# Berbasis Android menggunakan Metode Rapid Application Development 
+# Tugas Akhir
+# Aplikasi Deteksi Sistem Isyarat Bahasa Indonesia (SIBI) Berbasis Android menggunakan Metode Rapid Application Development 
 
 **Muhammad Irhcam Maulana** **2011501007**
 
