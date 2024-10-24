@@ -46,7 +46,8 @@ fun DeteksiIsyaratCard(navController: NavHostController) {
                 Spacer(modifier = Modifier.height(8.dp))
                 Button(
                     onClick = { navController.navigate("deteksiIsyarat") },
-                    colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF00ADEF))
+                    colors = ButtonDefaults.buttonColors
+                        (containerColor = Color(0xFF00ADEF))
                 ) {
                     Text("Kunjungi")
                 }

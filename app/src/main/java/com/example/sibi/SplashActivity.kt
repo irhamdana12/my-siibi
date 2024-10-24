@@ -17,39 +17,41 @@ import androidx.compose.ui.unit.dp
 import com.example.sibi.ui.theme.SIBITheme
 import kotlinx.coroutines.*
 
-class SplashActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    class SplashActivity : ComponentActivity() {
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
 
-        setContent {
-            SIBITheme {
+            setContent {
+                SIBITheme {
 
-                Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
-                    SplashScreenContent()
+                    Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
+                        SplashScreenContent()
+                    }
                 }
             }
-        }
 
-        CoroutineScope(Dispatchers.Main).launch {
-            delay(2000L)  //
-            startActivity(Intent(this@SplashActivity, MainActivity::class.java))
-            finish()
+            CoroutineScope(Dispatchers.Main).launch {
+                delay(2000L)  //
+                startActivity(Intent(this@SplashActivity, MainActivity::class.java))
+                finish()
+            }
         }
     }
-}
 
-@Composable
-fun SplashScreenContent() {
-    Box(
-        contentAlignment = Alignment.Center,
-        modifier = Modifier.fillMaxSize()
-    ) {
+    @Composable
+    fun SplashScreenContent() {
+        Box(
+            contentAlignment = Alignment.Center,
+            modifier = Modifier.fillMaxSize()
+        ) {
 
-        Image(
-            painter = painterResource(id = R.drawable.ic_hand_open),
-            contentDescription = "Splash Logo",
-            contentScale = ContentScale.Fit,
-            modifier = Modifier.size(200.dp)
-        )
+            Image(
+                painter = painterResource(id = R.drawable.ic_hand_open),
+                contentDescription = "Splash Logo",
+                contentScale = ContentScale.Fit,
+                modifier = Modifier.size(200.dp)
+            )
+        }
     }
-}
+
+

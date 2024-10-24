@@ -81,6 +81,9 @@ dependencies {
     implementation("androidx.compose.material3:material3-adaptive-navigation-suite:1.3.0")
     implementation(libs.tensorflow.lite.support)
     implementation(libs.tensorflow.lite.metadata)
+    implementation ("com.google.accompanist:accompanist-flowlayout:0.30.1")
+    implementation("androidx.preference:preference-ktx:1.2.0")
+
 
     // CameraX (Remove redundant entries)
     implementation("androidx.camera:camera-core:$camerax_version")

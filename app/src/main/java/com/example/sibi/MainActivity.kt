@@ -19,9 +19,10 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.sibi.ui.theme.SIBITheme
-import java.util.concurrent.Executors
 
 
+
+// MainActivity
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,10 +55,15 @@ fun SIBIScaffold(objectDetectionHelper: ObjectDetectionHelper) {
             InformasiTentangSibiScreen()
         }
         composable("daftarKata") {
-            DaftarKataScreen()
+            DaftarKataScreen(navController) // Passing navController to handle navigation
+        }
+        composable("resultScreen/{selectedWords}") { backStackEntry ->
+            val selectedWords = backStackEntry.arguments?.getString("selectedWords")?.split(",") ?: emptyList()
+            ResultScreen(selectedWords)
         }
     }
 }
+
 
 @Composable
 fun HomeScreen(navController: NavHostController) {
