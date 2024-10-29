@@ -78,7 +78,7 @@ fun DaftarKataCard(navController: NavHostController) {
 
 @Composable
 fun DaftarKataScreen(navController: NavHostController) {
-    var selectedWords by remember { mutableStateOf(mutableListOf<KataItem>()) }
+    val selectedWords = remember { mutableStateListOf<KataItem>() }
 
     // Data for images and descriptions
     val kataList = listOf(
@@ -138,18 +138,19 @@ fun DaftarKataScreen(navController: NavHostController) {
                     targetValue = if (isSelected) Color.White else Color.Black
                 )
                 // Button with animated background and text color
-                    OutlinedButton(
-                        onClick =  { toggleSelection(kataItem) },
-                        shape = RoundedCornerShape(50), // Rounded corners
-                        border = BorderStroke(1.dp, Color.Gray), // Border color and thickness
-                        colors = ButtonDefaults.outlinedButtonColors(
-                            contentColor = Color(0xFF5D4C86) // Text color similar to the one in your image
-                        ),
-                        modifier = Modifier
-                            .padding(2.dp)
-                    ) {
-                        Text(text = kataItem.title)
-                    }
+                OutlinedButton(
+                    onClick =  { toggleSelection(kataItem) },
+                    shape = RoundedCornerShape(50), // Rounded corners
+                    border = BorderStroke(1.dp, Color.Gray), // Border color and thickness
+                    colors = ButtonDefaults.outlinedButtonColors(
+                        contentColor = if (selectedWords.contains(kataItem))  Color.White else Color(0xFF5D4C86),
+                        containerColor = if (selectedWords.contains(kataItem)) Color(0xFF5D4C86) else Color.Unspecified,// Text color similar to the one in your image
+                    ),
+                    modifier = Modifier
+                        .padding(2.dp)
+                ) {
+                    Text(text = kataItem.title)
+                }
 
             }
         }
